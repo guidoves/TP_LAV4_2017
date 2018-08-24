@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Juego } from '../clases/Juego';
+import { Juego } from '../clases/juego';
 import { JuegoAdivina } from '../clases/juego-adivina';
-import { MiHttpService } from './mi-http/mi-http.service'; 
+import { MiHttpService } from './mi-http/mi-http.service';
 
 @Injectable()
 export class JuegoServiceService {
 
-  peticion:any;
+  peticion: any;
   constructor( public miHttp: MiHttpService ) {
     this.peticion = this.miHttp.httpGetO("http://localhost:3003");
 //    this.peticion = this.miHttp.httpGetO("https://restcountries.eu/rest/v2/all");
