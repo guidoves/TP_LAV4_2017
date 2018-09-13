@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ANGULAR MATERIAL */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body {
+    background-color: #f2f2f2;
+}
+
+
+.puntero {
+    cursor: pointer;
+}

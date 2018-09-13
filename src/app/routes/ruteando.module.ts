@@ -8,19 +8,17 @@ import { LoginComponent } from '../components/login/login.component';
 import { ErrorComponent } from '../components/error/error.component';
 import { PrincipalComponent } from '../components/principal/principal.component';
 import { AgilidadAritmeticaComponent } from '../components/agilidad-aritmetica/agilidad-aritmetica.component';
-import { MenuComponent } from '../components/menu/menu.component';
 import { AdivinaMasListadoComponent } from '../components/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../components/agilidad-mas-listado/agilidad-mas-listado.component';
 import { ListadoComponent } from '../components/listado/listado.component';
-import { ListadosComponent } from '../components/listados/listados.component';
 import { JuegosComponent } from '../components/juegos/juegos.component';
 import { RegistroComponent } from '../components/registro/registro.component';
-import { MenuCardComponent } from '../components/menu-card/menu-card.component';
-import { CabeceraComponent } from '../components/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../components/quien-soy/quien-soy.component';
 import { ListadoDePaisesComponent } from '../components/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from '../components/mapa-de-google/mapa-de-google.component';
 import { JugadoresListadoComponent } from '../components/jugadores-listado/jugadores-listado.component';
+import {PiedraPapelTijeraComponent } from '../components/piedra-papel-tijera/piedra-papel-tijera.component';
+import { PiensaRapidoComponent } from '../components/piensa-rapido/piensa-rapido.component';
 
 
 // declaro donde quiero que se dirija
@@ -38,11 +36,13 @@ const MiRuteo = [
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:
-     [{path: '' , component: MenuCardComponent},
+     [{path: '' , component: PrincipalComponent},
+     {path: 'Piensa' , component: PiensaRapidoComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
       {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
+      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+      {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

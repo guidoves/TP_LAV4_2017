@@ -1,0 +1,32 @@
+.header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.header h1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.opciones {
+    margin-bottom: 10px;
+}
+
+.game{
+    display: inline-flex;
+    position: relative;
+}
+
+.gameEnd img{
+    width: 200px;
+    height: 200px;
+}
+
+.partida {
+    border : solid black 1px;
+    height: 600px;
+}

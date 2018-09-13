@@ -1,0 +1,170 @@
+<div class="row my-5 animated fadeIn">
+  <div class="col-12">
+
+    <span>Piedra Papel o Tijeras</span>
+
+  </div>
+
+  <div class="col-3 align-self-center">
+
+    <div class="opciones">
+      <button (click)="jugar(3)"><img src="../../../assets/imagenes/piedra.png" alt="" srcset=""></button>
+    </div>
+
+    <div class="opciones">
+      <button (click)="jugar(2)"><img src="../../../assets/imagenes/papel.jpeg" alt="" srcset=""></button>
+    </div>
+
+    <div class="opciones">
+      <button (click)="jugar(1)"><img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset=""></button>
+    </div>
+
+  </div>
+
+  <div class="col-8 partida">
+    <div class="row">
+
+      <!-- Columna Jugador -->
+      <div class="col-6 text-center">
+        <div class="row">
+
+          <div class="col-12">
+
+            <span>Jugador</span>
+
+          </div>
+
+          <div class="col-12 mt-5">
+              <!-- opcion jugador -->
+  
+              <div *ngIf="this.eleccionJugador == 1">
+                <img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset="">
+              </div>
+              <div *ngIf="this.eleccionJugador == 2">
+                <img src="../../../assets/imagenes/papel.jpeg" alt="" srcset="">
+              </div>
+              <div *ngIf="this.eleccionJugador == 3">
+                <img src="../../../assets/imagenes/piedra.png" alt="" srcset="">
+              </div>
+  
+  
+            </div>
+
+        </div>
+
+      </div>
+
+      <!-- Columna CPU -->
+      <div class="col-6 text-center">
+        <div class="row">
+
+          <div class="col">
+
+            <span>CPU</span>
+
+
+          </div>
+
+          <div class="col-12 mt-5">
+            <!-- opcion cpu -->
+
+            <div *ngIf="this.eleccionMaquina == 1">
+              <img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset="">
+            </div>
+            <div *ngIf="this.eleccionMaquina == 2">
+              <img src="../../../assets/imagenes/papel.jpeg" alt="" srcset="">
+            </div>
+            <div *ngIf="this.eleccionMaquina == 3">
+              <img src="../../../assets/imagenes/piedra.png" alt="" srcset="">
+            </div>
+            <p-progressSpinner *ngIf="loading" ></p-progressSpinner>
+
+          </div>
+
+      </div>
+      <div class="col-12">
+
+          <!-- resultado -->
+          <h1>{{resultado}}</h1>
+    
+    
+      </div>
+    </div>
+
+    <div class="col-6">
+
+        <!-- game jugador -->
+        <p-rating stars="10" [ngModel]="jugador" [cancel]="false" readonly="true" iconOnClass="pi pi-circle-on" iconOffClass="pi pi-circle-off">;</p-rating>
+
+      </div>
+
+      <div class="col-6">
+
+        <!-- game cpu -->
+        <p-rating stars="10" [ngModel]="maquina" [cancel]="false" readonly="true" iconOnClass="pi pi-circle-on" iconOffClass="pi pi-circle-off">;</p-rating>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="col">
+
+  <button routerLink="/Principal">Volver</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="animated fast fadeIn">
+  <div class="header">
+    <h1>Piedra Papel o Tijera</h1>
+    <span>A jugar.. </span>
+    <span>Haga click en la figura.</span>
+  </div>
+  <div class="game">
+    <div>
+      <button (click)="jugar(3)">
+        <img src="../../../assets/imagenes/piedra.jpg" alt="">
+      </button>
+    </div>
+    <div>
+      <button (click)="jugar(2)">
+        <img src="../../../assets/imagenes/papel.jpg">
+      </button>
+    </div>
+    <div>
+      <button (click)="jugar(1)">
+        <img src="../../../assets/imagenes/tijera.jpg" alt="" srcset="">
+      </button>
+    </div>
+  </div>
+  <div class="gameEnd">
+    <div>
+      <div *ngIf="this.eleccionMaquina == 1">
+        <img src="../../../assets/imagenes/tijera.jpg" alt="" srcset="">
+      </div>
+      <div *ngIf="this.eleccionMaquina == 2">
+        <img src="../../../assets/imagenes/papel.jpg" alt="" srcset="">
+      </div>
+      <div *ngIf="this.eleccionMaquina == 3">
+        <img src="../../../assets/imagenes/piedra.jpg" alt="" srcset="">
+      </div>
+    </div>
+    <div>
+      <h1>{{resultado}}</h1>
+    </div>
+  </div>
+</div>
+ -->

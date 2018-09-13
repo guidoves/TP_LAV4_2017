@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './components/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './components/login/login.component';
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 
-// import { AccordionModule } from 'ngx-bootstrap';
-// agrego las clases para utilizar ruteo
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModuloExterno } from './modulo.externo';
+
 import { RouterModule, Routes } from '@angular/router';
 
 import { MiHttpService } from './services/mi-http/mi-http.service';
@@ -25,19 +25,7 @@ import { AdivinaMasListadoComponent } from './components/adivina-mas-listado/adi
 import { AgilidadMasListadoComponent } from './components/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './routes/ruteando.module';
 import { ListadoComponent } from './components/listado/listado.component';
-// declaro donde quiero que se dirija
-/*
-const MiRuteo = [{path: 'error' , component: ErrorComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Principal' , component: PrincipalComponent , pathMatch: 'full'},
-{path: 'Adivina' , component: AdivinaElNumeroComponent},
-{path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-{path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-{path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-{path: '' , component: LoginComponent , pathMatch: 'full'},
 
-{path: '**' , component: ErrorComponent} ];
-*/
 import { JugadoresListadoComponent } from './components/jugadores-listado/jugadores-listado.component';
 
 import { JuegoServiceService } from './services/juego-service.service';
@@ -55,6 +43,9 @@ import { InputJugadoresComponent } from './components/input-jugadores/input-juga
 import { SexoPipe } from './pipes/sexo.pipe';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
+import { PiensaRapidoComponent } from './components/piensa-rapido/piensa-rapido.component';
+import { CuentaAtrasComponent } from './components/piensa-rapido/cuenta-atras/cuenta-atras.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +73,10 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     InputJugadoresComponent,
     SexoPipe,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PiedraPapelTijeraComponent,
+    PiensaRapidoComponent,
+    CuentaAtrasComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +84,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     RuteandoModule,
     HttpModule,
     RouterModule,
+    BrowserAnimationsModule,
+    ModuloExterno,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
