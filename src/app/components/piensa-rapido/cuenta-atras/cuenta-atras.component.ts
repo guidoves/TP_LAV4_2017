@@ -26,7 +26,7 @@ export class CuentaAtrasComponent implements OnInit {
     if ( --this.segundos < 1) {
 
       clearTimeout(this.intervalo);
-      this.completado.emit();
+      this.completado.emit(0);
 
     }
   }

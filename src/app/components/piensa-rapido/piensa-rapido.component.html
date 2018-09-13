@@ -2,20 +2,22 @@
 
   <div class="row">
 
-    <div class="col-12">
+    <div class="my-2 col-12">
 
       <span>Piensa Rapido</span>
 
     </div>
 
+    <div class="my-2 col-12">
+
+      <button class="btn btn-success" (click)="comenzar()">Comenzar</button>
+
+    </div>
+
     <div class="col row justify-content-center juego">
-      <!-- <div *ngFor="let numeros of numerosGenerados"  class="row juego">
-          <div *ngFor="let item of numeros" class="col juego">
-              <button mat-fab color="primary">{{item}}</button>
-          </div>
-        </div> -->
-      <div class="col-2 m-2 text-center" *ngFor="let num of numerosGenerados">
-        <button mat-fab color="primary" (click)="obtenerNumero(num)" >{{num}}</button>
+      
+      <div class="col-2 m-2 text-center" *ngFor="let num of numerosGenerados ; let i = index">
+        <button [disabled]="numerosSeleccionados[i] == num || !gana " mat-fab color="primary"(click)="obtenerNumero(num,i)" >{{num}}</button>
       </div>
 
     </div>
@@ -25,17 +27,15 @@
   <!-- reglas -->
   <div class="row justify-content-center">
     <p>
-      Ordena de menor a mayor!
-
+      {{consigna}}
     </p>
-
 
   </div>
 
   <!-- contador -->
-  <div class="row justify-content-center">
+  <div *ngIf="gana" class="row justify-content-center">
 
-    <app-cuenta-atras [segundos]="tiempo"></app-cuenta-atras>
+    <app-cuenta-atras (completado)="gana = false" [segundos]="tiempo"></app-cuenta-atras>
 
   </div>
 
