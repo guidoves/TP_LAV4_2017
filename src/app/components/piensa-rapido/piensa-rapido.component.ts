@@ -7,12 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PiensaRapidoComponent implements OnInit {
 
-
-  /* numerosGenerados: number[][]; */
-  numerosGenerados: number[] = [];
-
-
   // nivel
+  numerosGenerados: number[] = [];
   consigna: string;
   tiempo: number;
   ordenCorrecto: number[] = [];
@@ -35,7 +31,7 @@ export class PiensaRapidoComponent implements OnInit {
   }
 
   comenzar(  ) {
-      this.resetearSeleccionados();
+      this.resetSeleccionados();
 
       this.jugadas = 0;
 
@@ -51,11 +47,21 @@ export class PiensaRapidoComponent implements OnInit {
     this.numerosGenerados = [];
 
     for (let i = 0; i < 30; i++) {
-      this.numerosGenerados.push(this.generarNumeroRandom());
+
+      let numeroGenerado = this.generarNumeroRandom();
+
+      let busqueda  = this.numerosGenerados.find((num) => num === numeroGenerado );
+
+      if (busqueda === undefined) {
+        this.numerosGenerados.push(numeroGenerado);
+      } else {
+        i--;
+      }
+
     }
   }
 
-  private resetearSeleccionados() {
+  private resetSeleccionados() {
 
     this.numerosSeleccionados = [];
 

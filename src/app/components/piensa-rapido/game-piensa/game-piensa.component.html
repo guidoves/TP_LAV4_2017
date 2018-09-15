@@ -1,0 +1,31 @@
+<div class="container">
+  
+  <div class="row">
+    <button (click)="comenzar(nivelUno)" class="btn btn-success">Comenzar</button>
+  </div>
+
+
+  <div *ngIf="gana" class="row">
+
+    <div class="col-2 m-2 text-center" *ngFor="let num of numerosGenerados ; let i = index">
+      <button [disabled]="numerosSeleccionados[i] == num || !gana " mat-fab color="primary"(click)="obtenerNumero(num,i)" >{{num}}</button>
+    </div>
+
+  </div>
+
+  <!-- reglas -->
+  <div class="row justify-content-center">
+    <p>
+      {{objetivo}}
+    </p>
+
+  </div>
+
+  <!-- contador -->
+  <div *ngIf="gana" class="row justify-content-center">
+
+    <app-cuenta-atras (completado)="gana = false" [segundos]="tiempo"></app-cuenta-atras>
+
+  </div>
+
+</div>

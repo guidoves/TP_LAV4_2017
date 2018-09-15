@@ -8,36 +8,44 @@
 
     </div>
 
-    <div class="my-2 col-12">
+    <!-- <div class="my-2 col-12">
 
       <button class="btn btn-success" (click)="comenzar()">Comenzar</button>
 
+    </div> -->
+
+    <div class="my-2 col-12">
+
+      <app-game-piensa></app-game-piensa>
+
+
     </div>
 
-    <div class="col row justify-content-center juego">
+
+   <!--  <div class="col row justify-content-center juego">
       
       <div class="col-2 m-2 text-center" *ngFor="let num of numerosGenerados ; let i = index">
         <button [disabled]="numerosSeleccionados[i] == num || !gana " mat-fab color="primary"(click)="obtenerNumero(num,i)" >{{num}}</button>
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 
   <!-- reglas -->
-  <div class="row justify-content-center">
+  <!-- <div class="row justify-content-center">
     <p>
       {{consigna}}
     </p>
 
-  </div>
+  </div> -->
 
   <!-- contador -->
-  <div *ngIf="gana" class="row justify-content-center">
+ <!--  <div *ngIf="gana" class="row justify-content-center">
 
     <app-cuenta-atras (completado)="gana = false" [segundos]="tiempo"></app-cuenta-atras>
 
-  </div>
+  </div> -->
 
 
 </div>

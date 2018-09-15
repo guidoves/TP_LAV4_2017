@@ -46,6 +46,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
 import { PiensaRapidoComponent } from './components/piensa-rapido/piensa-rapido.component';
 import { CuentaAtrasComponent } from './components/piensa-rapido/cuenta-atras/cuenta-atras.component';
+import { GamePiensaComponent } from './components/piensa-rapido/game-piensa/game-piensa.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { CuentaAtrasComponent } from './components/piensa-rapido/cuenta-atras/cu
     FooterComponent,
     PiedraPapelTijeraComponent,
     PiensaRapidoComponent,
-    CuentaAtrasComponent
+    CuentaAtrasComponent,
+    GamePiensaComponent
   ],
   imports: [
     BrowserModule,
