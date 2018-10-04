@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './components/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModuloExterno } from './modulo.externo';
@@ -14,6 +15,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MiHttpService } from './services/mi-http/mi-http.service';
 import { PaisesService } from './services/paises.service';
+
+
 
 import { JugadoresService } from './services/jugadores.service';
 import { ArchivosJugadoresService} from './services/archivos-jugadores.service';
@@ -47,6 +50,9 @@ import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/pie
 import { PiensaRapidoComponent } from './components/piensa-rapido/piensa-rapido.component';
 import { CuentaAtrasComponent } from './components/piensa-rapido/cuenta-atras/cuenta-atras.component';
 import { GamePiensaComponent } from './components/piensa-rapido/game-piensa/game-piensa.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { JugadorComponent } from './components/resultados/jugador/jugador.component';
+import { GlobalesComponent } from './components/resultados/globales/globales.component';
 
 @NgModule({
   declarations: [
@@ -78,16 +84,21 @@ import { GamePiensaComponent } from './components/piensa-rapido/game-piensa/game
     PiedraPapelTijeraComponent,
     PiensaRapidoComponent,
     CuentaAtrasComponent,
-    GamePiensaComponent
+    GamePiensaComponent,
+    LoadingComponent,
+    JugadorComponent,
+    GlobalesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RuteandoModule,
     HttpModule,
     RouterModule,
     BrowserAnimationsModule,
     ModuloExterno,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })
@@ -95,7 +106,8 @@ import { GamePiensaComponent } from './components/piensa-rapido/game-piensa/game
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService, PaisesService, ArchivosJugadoresService, JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService, PaisesService,
+     ArchivosJugadoresService, JugadoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

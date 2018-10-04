@@ -17,20 +17,24 @@ height: 70px;
 }
 
     .titulo{
-        margin-top: 10px;
         margin-bottom: 20px;
-        
-    }
+        background-color: #310681;
+        height: 250px;
+        padding: 50px;
+}
     
     .titulo p{
         font-family: 'Courier New', Courier, monospace;
         font-size: 20px;
         text-align: center;
+        color : whitesmoke;
     }
 
     .card {
 
         box-shadow: 1px 2px 2px 1px black;
+        background-color:#3f5833;
+        color: white;
 
     }
 

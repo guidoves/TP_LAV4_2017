@@ -7,7 +7,7 @@
 
   <div class="col-3 align-self-center">
 
-    <div class="opciones">
+    <div class="opcion">
       <button (click)="jugar(3)"><img src="../../../assets/imagenes/piedra.png" alt="" srcset=""></button>
     </div>
 
@@ -21,7 +21,7 @@
 
   </div>
 
-  <div class="col-8 partida">
+  <div class="col-8  partida">
     <div class="row">
 
       <!-- Columna Jugador -->
@@ -34,7 +34,7 @@
 
           </div>
 
-          <div class="col-12 mt-5">
+          <div class="col-12 opcion">
               <!-- opcion jugador -->
   
               <div *ngIf="this.eleccionJugador == 1">
@@ -65,7 +65,7 @@
 
           </div>
 
-          <div class="col-12 mt-5">
+          <div class="col-12 opciones">
             <!-- opcion cpu -->
 
             <div *ngIf="this.eleccionMaquina == 1">
@@ -91,15 +91,20 @@
       </div>
     </div>
 
+    
+  </div>
+  
+  <div class="row">
+    
     <div class="col-6">
-
+  
         <!-- game jugador -->
         <p-rating stars="10" [ngModel]="jugador" [cancel]="false" readonly="true" iconOnClass="pi pi-circle-on" iconOffClass="pi pi-circle-off">;</p-rating>
-
+  
       </div>
-
+  
       <div class="col-6">
-
+  
         <!-- game cpu -->
         <p-rating stars="10" [ngModel]="maquina" [cancel]="false" readonly="true" iconOnClass="pi pi-circle-on" iconOffClass="pi pi-circle-off">;</p-rating>
       </div>

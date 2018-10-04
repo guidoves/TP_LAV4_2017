@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
-    <img width="30" height="30" src="assets/imagenes/logo.png" alt=""> Sala de Juegos
+    <img width="30" height="30" src="assets/imagenes/logo.png" alt=""> [Sala de Juegos]
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -22,15 +22,16 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Resultados</a>
+        <a class="nav-link" href="#">Mis Resultados</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Jugadores</a>
+        <a class="nav-link" href="#">Ranking Global</a>
       </li>
     </ul>
   </div>
+  
   <div>
-    <button class="mr-1 btn btn-outline-success">Registrarse</button>
-    <button class="btn btn-outline-primary">Entrar</button>
+    <span class="mr-1 username" >Bienvenido {{this.login.usuario.user_name}} </span>
+    <button (click)="login.logout()" class="mr-1 btn btn-outline-danger">Cerrar Sesión</button>
   </div>
 </nav>

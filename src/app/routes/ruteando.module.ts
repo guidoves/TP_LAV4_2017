@@ -1,3 +1,4 @@
+import { JugadorComponent } from './../components/resultados/jugador/jugador.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // importo del module principal
@@ -12,7 +13,6 @@ import { AdivinaMasListadoComponent } from '../components/adivina-mas-listado/ad
 import { AgilidadMasListadoComponent } from '../components/agilidad-mas-listado/agilidad-mas-listado.component';
 import { ListadoComponent } from '../components/listado/listado.component';
 import { JuegosComponent } from '../components/juegos/juegos.component';
-import { RegistroComponent } from '../components/registro/registro.component';
 import { QuienSoyComponent } from '../components/quien-soy/quien-soy.component';
 import { ListadoDePaisesComponent } from '../components/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from '../components/mapa-de-google/mapa-de-google.component';
@@ -28,7 +28,7 @@ const MiRuteo = [
 {path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent},
 {path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
+{path: 'Resultados' , component: JugadorComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
 {path: 'Paises' , component: ListadoDePaisesComponent},

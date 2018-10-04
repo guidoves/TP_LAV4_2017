@@ -30,10 +30,10 @@ export class GamePiensaComponent implements OnInit {
 
     this.jugadas = 0;
 
-    nivel();
+    this.nivelUno();
 
     this.gana = true;
-    
+
   }
 
   private resetSeleccionados() {
@@ -87,7 +87,7 @@ export class GamePiensaComponent implements OnInit {
 
   }
 
-  private nivelUno() {
+   nivelUno() {
     this.objetivo = 'Ordena los números de menor a mayor';
     this.tiempo = 30;
     this.ordenCorrecto = this.ordenCorrecto.sort((a, b) => a - b);
