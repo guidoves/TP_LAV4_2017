@@ -1,27 +1,30 @@
 <div class="row my-5 animated fadeIn">
-  <div class="col-12">
+  <header class="col-12">
 
-    <span>Piedra Papel o Tijeras</span>
+    <span>Piedra Papel ó Tijeras</span>
 
-  </div>
+  </header>
 
-  <div class="col-3 align-self-center">
+  <aside class="col-3 align-self-center">
 
-    <div class="opcion">
+    <div class="opciones">
       <button (click)="jugar(3)"><img src="../../../assets/imagenes/piedra.png" alt="" srcset=""></button>
+      <p><strong>PIEDRA</strong></p>
     </div>
 
     <div class="opciones">
       <button (click)="jugar(2)"><img src="../../../assets/imagenes/papel.jpeg" alt="" srcset=""></button>
+      <p><strong>PAPEL</strong></p>
     </div>
 
     <div class="opciones">
       <button (click)="jugar(1)"><img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset=""></button>
+      <p><strong>TIJERAS</strong></p>
     </div>
 
-  </div>
+  </aside>
 
-  <div class="col-8  partida">
+  <section class="col-8">
     <div class="row">
 
       <!-- Columna Jugador -->
@@ -37,13 +40,13 @@
           <div class="col-12 opcion">
               <!-- opcion jugador -->
   
-              <div *ngIf="this.eleccionJugador == 1">
+              <div class="animated fadeIn fast" *ngIf="this.eleccionJugador == 1">
                 <img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset="">
               </div>
-              <div *ngIf="this.eleccionJugador == 2">
+              <div class="animated fadeIn fast" *ngIf="this.eleccionJugador == 2">
                 <img src="../../../assets/imagenes/papel.jpeg" alt="" srcset="">
               </div>
-              <div *ngIf="this.eleccionJugador == 3">
+              <div class="animated fadeIn fast" *ngIf="this.eleccionJugador == 3">
                 <img src="../../../assets/imagenes/piedra.png" alt="" srcset="">
               </div>
   
@@ -65,16 +68,16 @@
 
           </div>
 
-          <div class="col-12 opciones">
+          <div class="col-12 opcion">
             <!-- opcion cpu -->
 
-            <div *ngIf="this.eleccionMaquina == 1">
+            <div class="animated fadeIn fast" *ngIf="this.eleccionMaquina == 1">
               <img src="../../../assets/imagenes/tijeras.jpeg" alt="" srcset="">
             </div>
-            <div *ngIf="this.eleccionMaquina == 2">
+            <div class="animated fadeIn fast" *ngIf="this.eleccionMaquina == 2">
               <img src="../../../assets/imagenes/papel.jpeg" alt="" srcset="">
             </div>
-            <div *ngIf="this.eleccionMaquina == 3">
+            <div class="animated fadeIn fast" *ngIf="this.eleccionMaquina == 3">
               <img src="../../../assets/imagenes/piedra.png" alt="" srcset="">
             </div>
             <p-progressSpinner *ngIf="loading" ></p-progressSpinner>
@@ -82,20 +85,19 @@
           </div>
 
       </div>
-      <div class="col-12">
-
-          <!-- resultado -->
-          <h1>{{resultado}}</h1>
-    
-    
-      </div>
     </div>
 
     
   </div>
+
+  <div class="row resultado">
+    <div class="col-12 text-center">
+        <!-- resultado -->
+        <h1>{{resultado}}</h1>
+    </div>
+  </div>
   
-  <div class="row">
-    
+  <div class="row marcador">
     <div class="col-6">
   
         <!-- game jugador -->
@@ -111,7 +113,7 @@
 
     </div>
 
-  </div>
+  </section>
 
 </div>
 
