@@ -12,7 +12,10 @@ export class CuentaAtrasComponent implements OnInit {
   @Output() completado: EventEmitter<any>;
   intervalo: any;
 
+
   @ViewChild('div') div;
+
+  mostrar = true;
 
   constructor() {
 
@@ -23,12 +26,14 @@ export class CuentaAtrasComponent implements OnInit {
    }
 
   private cuentaAtras() {
-    if ( --this.segundos < 1) {
 
+
+    if ( --this.segundos < 1) {
       clearTimeout(this.intervalo);
       this.completado.emit(0);
 
     }
+
   }
 
 

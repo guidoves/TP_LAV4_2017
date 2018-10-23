@@ -10,6 +10,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
   eleccionMaquina: number;
   eleccionJugador: number;
 
+  opcionJugador;
+
   // Round
   resultado: string;
 
@@ -17,75 +19,107 @@ export class PiedraPapelTijeraComponent implements OnInit {
   jugador = 0;
   maquina = 0;
 
-  loading: boolean;
+  // Contador
+  contador = 3;
+
+  juego: boolean;
+
+  inicioPartida = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  jugar(eleccion: number) {
+  botonInicio() {
 
-    this.eleccionJugador = eleccion;
+    this.jugador = 0;
+    this.maquina = 0;
+    this.eleccionJugador = null;
+    this.eleccionMaquina = null;
+    this.resultado = null;
+
+    this.inicioPartida = true;
+  }
+
+  comienzaJuego() {
+
+    this.juego = false;
+    
+    this.eleccionJugador = this.opcionJugador;
+
+    this.eleccionMaquina = Math.floor(Math.random() * (4 - 1) + 1);
+
+
+    switch (this.eleccionJugador) {
+      case 1:
+       if (this.eleccionMaquina === 1) {
+         this.resultado = '¡Empate!, ¡De vuelta!';
+         break;
+       }
+       if (this.eleccionMaquina === 2) {
+         this.resultado = '¡Ganaste!, ¡Dale que ganamos!';
+         this.jugador++;
+         break;
+       }
+       if (this.eleccionMaquina === 3) {
+         this.resultado = '¡Perdiste!, ¡Todavía no termina!';
+         this.maquina++;
+         break;
+       }
+       case 2:
+       if (this.eleccionMaquina === 1) {
+        this.resultado = '¡Perdiste!, ¡Todavía no termina!';
+         this.maquina++;
+         break;
+       }
+       if (this.eleccionMaquina === 2) {
+        this.resultado = '¡Empate!, ¡De vuelta!';
+         break;
+       }
+       if (this.eleccionMaquina === 3) {
+        this.resultado = '¡Ganaste!, ¡Dale que ganamos!';
+         this.jugador++;
+         break;
+       }
+       case 3:
+       if (this.eleccionMaquina === 1) {
+        this.resultado = '¡Ganaste!, ¡Dale que ganamos!';
+         this.jugador++;
+         break;
+       }
+       if (this.eleccionMaquina === 2) {
+        this.resultado = '¡Perdiste!, ¡Todavía no termina!';
+         this.maquina++;
+         break;
+       }
+       if (this.eleccionMaquina === 3) {
+        this.resultado = '¡Empate!, ¡De vuelta!';
+         break;
+       }
+    }
+
+    if (this.jugador === 5) {
+      this.resultado = `¡GANASTE! :) (${this.jugador}-${this.maquina})`;
+     // this.inicioPartida = false;
+    }
+    if (this.maquina === 5) {
+      this.resultado = `¡OTRA VEZ SERA! :( (${this.jugador}-${this.maquina})`;
+     // this.inicioPartida = false;
+    }
+
+  } 
   
-    this.loading = true;
-
-    setTimeout(() => {
-        
-      this.loading = false;
-      this.eleccionMaquina = Math.floor(Math.random() * (4 - 1) + 1);
-
-      switch (eleccion) {
-        case 1:
-         if (this.eleccionMaquina == 1) {
-           this.resultado = 'Empate';
-           break;
-         }
-         if (this.eleccionMaquina == 2) {
-           this.resultado = 'Gano';
-           this.jugador++;
-           break;
-         }
-         if (this.eleccionMaquina == 3) {
-           this.resultado = 'Perdio';
-           this.maquina++;
-           break;
-         }
-         case 2:
-         if (this.eleccionMaquina == 1) {
-           this.resultado = 'Perdio';
-           this.maquina++;
-           break;
-         }
-         if (this.eleccionMaquina == 2) {
-           this.resultado = 'Empate';
-           break;
-         }
-         if (this.eleccionMaquina == 3) {
-           this.resultado = 'Gano';
-           this.jugador++;
-           break;
-         }
-         case 3:
-         if (this.eleccionMaquina == 1) {
-           this.resultado = 'Gano';
-           this.jugador++;
-           break;
-         }
-         if (this.eleccionMaquina == 2) {
-           this.resultado = 'Perdio';
-           this.maquina++;
-           break;
-         }
-         if (this.eleccionMaquina == 3) {
-           this.resultado = 'Empate';
-           break;
-         }
-      }
-
-
-
-    }, 2000);
+  
+  jugar(eleccion: number) {
+    
+    this.eleccionJugador = null;
+    this.eleccionMaquina = null;
+    this.resultado = null;
+    
+    this.juego = true;
+    
+    this.opcionJugador = eleccion; 
 
   }
 

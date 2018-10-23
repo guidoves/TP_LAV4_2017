@@ -1,27 +1,31 @@
 header{
-    margin-bottom: 30px;
+    padding: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     text-align: center;
-    background-color:darkgreen;
+    background-color: #310681;
     color: whitesmoke;
+    height: 70px;
 }
 
 aside{
-    margin-left: 10px;
-    border: 1px solid black;
+    
     text-align: center;
     height: 600px;
-    background-color: darkolivegreen;
+    background-color: #130606;
+    color: green;
 }
 
-section {
-    border : solid black 1px;
-    height: 600px;
-    background-color: darkcyan;
+section, footer {
     font-family: 'Mali', cursive;
     font-size: 20px;
+    
+}
 
+section{
+    height: 600px;
+    background-color: #f2f2f2;
+    border : solid black 1px;
 }
 
 img{
@@ -45,11 +49,16 @@ section img{
     height: 300px;
 }
 
-.resultado {
-    border: solid black 1px;
+.marcador {
+    background-color: rgb(1, 90, 90);
+    color: whitesmoke;
 }
 
-.marcador {
-    border: solid black 1px;
+.botonInicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    
 }
 

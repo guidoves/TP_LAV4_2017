@@ -28,6 +28,7 @@ import { AdivinaMasListadoComponent } from './components/adivina-mas-listado/adi
 import { AgilidadMasListadoComponent } from './components/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './routes/ruteando.module';
 import { ListadoComponent } from './components/listado/listado.component';
+import { BotonStartComponent } from './components/shared/boton-start/boton-start.component';
 
 import { JugadoresListadoComponent } from './components/jugadores-listado/jugadores-listado.component';
 
@@ -53,6 +54,7 @@ import { GamePiensaComponent } from './components/piensa-rapido/game-piensa/game
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { JugadorComponent } from './components/resultados/jugador/jugador.component';
 import { GlobalesComponent } from './components/resultados/globales/globales.component';
+
 
 @NgModule({
   declarations: [
@@ -87,7 +89,8 @@ import { GlobalesComponent } from './components/resultados/globales/globales.com
     GamePiensaComponent,
     LoadingComponent,
     JugadorComponent,
-    GlobalesComponent
+    GlobalesComponent,
+    BotonStartComponent
   ],
   imports: [
     BrowserModule,
